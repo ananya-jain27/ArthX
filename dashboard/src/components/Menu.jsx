@@ -1,9 +1,11 @@
-import React, { useState } from "react";
-
+import React, { use, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Menu = () => {
   const [selectedMenu, setSelectedMenu] = useState(0);
+  const [user, setUser] = useState("User");
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
 
   const handleMenuClick = (index) => {
@@ -13,6 +15,14 @@ const Menu = () => {
   const handleProfileClick = (index) => {
     setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/user", { withCredentials: true })
+      .then((res) => {
+        console.log(res.data);
+        setUser(res.data.username);
+      })
+  }, []);
 
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
@@ -92,7 +102,7 @@ const Menu = () => {
         <hr />
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar"><i class="fa-solid fa-user"></i></div>
-          <p className="username">USERID</p>
+          <p className="username">{user}</p>
         </div>
       </div>
     </div>
