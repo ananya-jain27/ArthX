@@ -26,29 +26,29 @@ function Navbar() {
         <div class="collapse navbar-collapse order-lg-1" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <link class="nav-link active" aria-current="page" to="/signup">
+              <Link class="nav-link active" aria-current="page" to="/signup">
                 Signup
-              </link>
+              </Link>
             </li>
             <li class="nav-item">
-              <link class="nav-link" to="/about">
+              <Link class="nav-link" to="/about">
                 About
-              </link>
+              </Link>
             </li>
             <li class="nav-item">
-              <link class="nav-link" to="/products">
+              <Link class="nav-link" to="/products">
                 Products
-              </link>
+              </Link>
             </li>
             <li class="nav-item">
-              <link class="nav-link" to="/pricing">
+              <Link class="nav-link" to="/pricing">
                 Pricing
-              </link>
+              </Link>
             </li>
             <li class="nav-item">
-              <link class="nav-link" href="/support">
+              <Link class="nav-link" href="/support">
                 Support
-              </link>
+              </Link>
             </li>
           </ul>
         </div>
