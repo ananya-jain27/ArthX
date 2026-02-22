@@ -14,7 +14,7 @@ const SellActionWindow = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   const handleSellClick = () => {
-    axios.post("http://localhost:3000/newOrder", {
+    axios.post(`${import.meta.env.VITE_BACKEND_URL}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
