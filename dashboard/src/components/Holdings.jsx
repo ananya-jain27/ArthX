@@ -8,7 +8,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/allHoldings/", { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/allHoldings`, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setAllHoldings(res.data);
@@ -17,7 +17,7 @@ const Holdings = () => {
       // If unauthorized → redirect to login
       if (err.response && err.response.status === 401) {
         console.log(err.response.data.message);
-        window.location.href = "http://localhost:5173/login";
+        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
       }
     });
   }, []);
