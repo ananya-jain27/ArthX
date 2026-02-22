@@ -17,7 +17,7 @@ const Menu = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:3000/user", { withCredentials: true })
+    axios.get(`${import.meta.env.VITE_BACKEND_URL}/user`, { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setUser(res.data.username);
