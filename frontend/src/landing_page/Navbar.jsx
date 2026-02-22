@@ -46,7 +46,7 @@ function Navbar() {
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link" href="/support">
+              <Link class="nav-link" to="/support">
                 Support
               </Link>
             </li>
