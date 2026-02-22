@@ -42,7 +42,7 @@ const Signup = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3000/signup",
+        `${import.meta.env.VITE_BACKEND_URL}/signup`,
         {
           ...inputValue,
         },
@@ -52,7 +52,7 @@ const Signup = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "http://localhost:5174";
+          window.location.href = `${import.meta.env.VITE_DASHBOARD_URL}`;
         }, 1000);
       } else {
         handleError(message);
