@@ -14,7 +14,7 @@ const Home = () => {
       // If unauthorized → redirect to login
       if (err.response && err.response.status === 401) {
         console.log(err.response.data.message);
-        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login;
+        window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
       }
     });
   }, []);
