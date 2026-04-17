@@ -12,10 +12,10 @@ function Team() {
                     <p>Founder , CEO</p>
                 </div>
                 <div className="col text-muted" style={{fontSize : "16.5px", lineHeight: "1.8em"}}>
-                    <p>Ananya bootstrapped and founded ArthX in 2010 to overcome the hurdles he faced during his decade long stint as a trader. Today, ArthX has changed the landscape of the Indian broking industry.</p>
-                    <p>He is a member of the SEBI Secondary Market Advisory Committee (SMAC) and the Market Data Advisory Committee (MDAC).</p>
+                    <p>Ananya bootstrapped and founded ArthX in 2025 to overcome the hurdles she faced during her trading activities. Today, ArthX has changed the landscape of the Indian broking industry.</p>
+                    <p>She is a software Engineer.</p>
                     <p>Playing chess is her zen.</p>
-                    <p>Connect on <a href="/" style={{ textDecoration: "none" }}>Homepage</a> / TradingQnA / Twitter</p>
+                    <p>Connect on <a href="/" style={{ textDecoration: "none" }}>Homepage</a> / TradingQnA </p>
                 </div>
             </div>
         </div>
