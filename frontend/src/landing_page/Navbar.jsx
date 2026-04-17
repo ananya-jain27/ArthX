@@ -6,7 +6,7 @@ function Navbar() {
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-1">
       <div class="container p-1">
         <a class="navbar-brand" href="/">
-          <h2 class="logo">ArthX</h2>
+          <h2 className="logo">ArthX</h2>
         </a>
         <button
           class="navbar-toggler ms-auto order-lg-2"
