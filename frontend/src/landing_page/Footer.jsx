@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 function Footer() {
   return (
     <footer className="border-top" style={{ backgroundColor: "#f8f9fa", borderTop: "1px" }}>
