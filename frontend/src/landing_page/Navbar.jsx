@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top border-bottom border-1">
       <div class="container p-1">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand d-flex align-items-center me-5" href="/">
           <h2 className="logo">ArthX</h2>
         </a>
         <button
