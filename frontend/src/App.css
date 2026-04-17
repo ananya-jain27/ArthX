@@ -8,8 +8,12 @@
 .nav-link:hover{
   color: rgb(51, 78, 176);
 }
-
-
+.logo {
+    font-size: 27px;
+    font-weight: 700;
+    color: #1f2937;  /* modern dark */
+    letter-spacing: 1.2px;
+}
 
 .form_container {
   background-color: #fff;
