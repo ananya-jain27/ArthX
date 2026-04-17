@@ -5,11 +5,7 @@ function Footer() {
       <div className="container">
         <div className="row mt-5">
           <div className="col">
-            <img
-              src="media/images/logo.svg"
-              alt="logo"
-              style={{ width: "60%" }}
-            />
+            <h2 class="logo">Arthex</h2>
             <p className="text-muted mt-3" style={{ fontSize: "12px" }}>
               © 2010 - 2026, ArthX Broking Ltd.
             </p>
@@ -43,21 +39,6 @@ function Footer() {
               Open demat account
             </a>
             <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Commodity
-            </a>
-            <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Dematerialisation
-            </a>
           </div>
           <div className="col">
             <p>Support</p>
@@ -77,21 +58,6 @@ function Footer() {
               Support portal
             </a>
             <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              How to file a complaint?
-            </a>
-            <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Status of your complaints
-            </a>
             <br />
           </div>
           <div className="col">
@@ -104,21 +70,6 @@ function Footer() {
               About
             </a>
             <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Philosophy
-            </a>
-            <br />
-            <a
-              href=""
-              className=" text-muted "
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              Press & media
-            </a>
             <br />
             <a
               href=""
