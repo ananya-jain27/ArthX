@@ -5,7 +5,7 @@ function Footer() {
       <div className="container">
         <div className="row mt-5">
           <div className="col">
-            <h2 class="logo">Arthex</h2>
+            <h2 class="logo">ArthX</h2>
             <p className="text-muted mt-3" style={{ fontSize: "12px" }}>
               © 2010 - 2026, ArthX Broking Ltd.
             </p>
