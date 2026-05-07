@@ -60,7 +60,35 @@ app.post("/newOrder" ,userVerification ,  async(req,res) => {
     const newOrder = new OrdersModel({name,qty,price,mode});
     await newOrder.save();
     res.send("Order placed!!!");
-})
+});
+
+// GET - fetch logged in user's funds
+app.get("/funds", userVerification, async (req, res) => {
+  try {
+    res.json({ funds: req.user.funds });
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch funds" });
+  }
+});
+
+// PATCH - deduct funds after a buy order
+app.patch("/funds/deduct", userVerification, async (req, res) => {
+  try {
+    const { amount } = req.body;
+    const user = req.user;
+
+    if (user.funds < amount) {
+      return res.status(400).json({ message: "Insufficient funds" });
+    }
+
+    user.funds -= amount;
+    await user.save();
+
+    res.json({ remainingFunds: user.funds });
+  } catch (err) {
+    res.status(500).json({ message: "Failed to deduct funds" });
+  }
+});
 
 app.post("/signup" , AuthController.Signup);
 app.post("/login" , AuthController.Login);
