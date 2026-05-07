@@ -19,6 +19,10 @@ const bcrypt = require("bcryptjs");
     type: Date,
     default: new Date(),
   },
+  funds: {                // ✅ Add this
+    type: Number,
+    default: 1000,      // ₹1,000 default balance
+  },
 });
 
 // mongoose pre middleware to hash the password before saving the user document to the database
