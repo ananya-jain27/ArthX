@@ -56,16 +56,44 @@ app.get('/user',userVerification, (req,res) => {
 });
 
 app.post("/newOrder" ,userVerification ,  async(req,res) => {
-    const {name,qty,price,mode} = req.body;
-    const newOrder = new OrdersModel({name,qty,price,mode});
-    await newOrder.save();
-    res.send("Order placed!!!");
+     try {
+        const { name, qty, price, mode } = req.body;
+        const amount = qty * price;
+
+        if (mode === "BUY") {
+            // ✅ Check if user has enough funds
+            if (req.user.funds < amount) {
+                return res.status(400).json({ message: "Insufficient funds" });
+            }
+            req.user.funds -= amount;   // ✅ Deduct on buy
+        } else if (mode === "SELL") {
+            req.user.funds += amount;   // ✅ Add back on sell
+        }
+
+        await req.user.save();  // ✅ Save updated funds
+
+        const newOrder = new OrdersModel({ name, qty, price, mode });
+        await newOrder.save();
+
+        res.json({
+            message: "Order placed!",
+            remainingFunds: req.user.funds,
+        });
+    } catch (err) {
+        res.status(500).json({ message: "Failed to place order" });
+    }
 });
 
 // GET - fetch logged in user's funds
 app.get("/funds", userVerification, async (req, res) => {
   try {
-    res.json({ funds: req.user.funds });
+    const { funds, openingBalance } = req.user;
+    const marginsUsed = openingBalance - funds;
+    res.json({
+      funds,                // current available balance
+      openingBalance,       // original balance at signup
+      marginsUsed,          // total spent so far
+    });
   } catch (err) {
     res.status(500).json({ message: "Failed to fetch funds" });
   }
