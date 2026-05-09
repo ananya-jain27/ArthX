@@ -128,14 +128,8 @@ const BuyActionWindow = ({ uid }) => {
         },
         { withCredentials: true }
       );
-
-      // Deduct funds
-      await axios.patch(
-        `${import.meta.env.VITE_BACKEND_URL}/funds/deduct`,
-        { amount: Number(marginRequired) },
-        { withCredentials: true }
-      );
-
+      
+      setAvailableFunds(res.data.remainingFunds);
       generalContext.closeBuyWindow();
     } catch (err) {
       setOrderError(err.response?.data?.message || "Order failed. Try again.");
