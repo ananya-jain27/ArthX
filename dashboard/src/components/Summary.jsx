@@ -113,7 +113,7 @@ const Summary = () => {
             ) : error ? (
               <h3 style={{ color: "red", fontSize: "14px" }}>{error}</h3>
             ) : (
-              <h3>{formatAmount(fundsData.funds)}</h3>  {/* ✅ Dynamic */}
+              <h3>{formatAmount(fundsData.funds)}</h3>  
             )}
             <p>Margin available</p>
           </div>
@@ -122,13 +122,13 @@ const Summary = () => {
             <p>
               Margins used{" "}
               <span>
-                {loading ? "..." : error ? "-" : formatAmount(fundsData.marginsUsed)}  {/* ✅ Dynamic */}
+                {loading ? "..." : error ? "-" : formatAmount(fundsData.marginsUsed)}  
               </span>
             </p>
             <p>
               Opening balance{" "}
               <span>
-                {loading ? "..." : error ? "-" : formatAmount(fundsData.openingBalance)}  {/* ✅ Dynamic */}
+                {loading ? "..." : error ? "-" : formatAmount(fundsData.openingBalance)}  
               </span>
             </p>
           </div>
