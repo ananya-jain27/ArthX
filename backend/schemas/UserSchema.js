@@ -21,12 +21,17 @@ const bcrypt = require("bcryptjs");
   },
   funds: {                // ✅ Add this
     type: Number,
-    default: 1000,      // ₹1,000 default balance
+    default: 10000,      // ₹10,000 default balance
+  },
+  openingBalance: {
+    type: Number,
+    default: 10000,        // ✅ Set once at signup, never changes
   },
 });
 
 // mongoose pre middleware to hash the password before saving the user document to the database
 UserSchema.pre("save", async function () {
+  if (!this.isModified("password")) return; // ✅ Only hash if password changed
   this.password = await bcrypt.hash(this.password, 12);
   
 });
