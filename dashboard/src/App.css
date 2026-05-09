@@ -848,7 +848,7 @@ hr {
 
 .profile-dropdown {
   position: absolute;
-  bottom: 40px;        /* opens upward since profile is at bottom */
+  top: 40px;        /* opens downward since profile is at bottom */
   left: 0;
   background: #fff;
   border: 1px solid #e0e0e0;
