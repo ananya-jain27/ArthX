@@ -61,16 +61,16 @@ app.post("/newOrder" ,userVerification ,  async(req,res) => {
         const amount = qty * price;
 
         if (mode === "BUY") {
-            // ✅ Check if user has enough funds
+            // Check if user has enough funds
             if (req.user.funds < amount) {
                 return res.status(400).json({ message: "Insufficient funds" });
             }
-            req.user.funds -= amount;   // ✅ Deduct on buy
+            req.user.funds -= amount;   // Deduct on buy
         } else if (mode === "SELL") {
-            req.user.funds += amount;   // ✅ Add back on sell
+            req.user.funds += amount;   // Add back on sell
         }
 
-        await req.user.save();  // ✅ Save updated funds
+        await req.user.save();  // Save updated funds
 
         const newOrder = new OrdersModel({ name, qty, price, mode });
         await newOrder.save();
@@ -96,25 +96,6 @@ app.get("/funds", userVerification, async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ message: "Failed to fetch funds" });
-  }
-});
-
-// PATCH - deduct funds after a buy order
-app.patch("/funds/deduct", userVerification, async (req, res) => {
-  try {
-    const { amount } = req.body;
-    const user = req.user;
-
-    if (user.funds < amount) {
-      return res.status(400).json({ message: "Insufficient funds" });
-    }
-
-    user.funds -= amount;
-    await user.save();
-
-    res.json({ remainingFunds: user.funds });
-  } catch (err) {
-    res.status(500).json({ message: "Failed to deduct funds" });
   }
 });
 
