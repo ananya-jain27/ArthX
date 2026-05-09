@@ -194,14 +194,14 @@ const Menu = () => {
         </ul>
         <hr />
 
-        /* Profile with dropdown */
+        
         <div className="profile" onClick={handleProfileClick}>
           <div className="avatar">
             <i className="fa-solid fa-user"></i>
           </div>
           <p className="username">{user}</p>
 
-          /* Dropdown */
+          
           {isProfileDropdownOpen && (
             <div className="profile-dropdown">
               <p className="dropdown-item">{user}</p>
