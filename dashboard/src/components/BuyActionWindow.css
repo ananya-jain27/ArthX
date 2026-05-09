@@ -224,4 +224,21 @@
     background: #9b9b9b;
     color: #fff;
   }
-  
+
+.funds-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.funds-info .error {
+  color: #e53935;
+  font-weight: 500;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
