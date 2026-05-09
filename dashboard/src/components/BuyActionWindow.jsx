@@ -118,7 +118,7 @@ const BuyActionWindow = ({ uid }) => {
 
     try {
       // Place the order
-      await axios.post(
+      const res = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/newOrder`,
         {
           name: uid,
