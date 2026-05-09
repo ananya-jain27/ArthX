@@ -139,7 +139,7 @@ const Menu = () => {
         {},
         { withCredentials: true }
       );
-      navigate(import.meta.env.VITE_FRONTEND_URL); // ✅ redirect to login
+      window.location.href = import.meta.env.VITE_FRONTEND_URL; // ✅ redirect to login
     } catch (err) {
       console.error("Logout failed:", err);
     }
