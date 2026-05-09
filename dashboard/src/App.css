@@ -296,6 +296,7 @@ hr {
 }
 
 .profile {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -841,15 +842,16 @@ hr {
 .action:hover {
   background-color: rgb(212, 212, 212);
 }
-.profile {
+/* .profile {
   position: relative;
   cursor: pointer;
-}
+} */
 
 .profile-dropdown {
   position: absolute;
   top: 40px;        /* opens downward since profile is at bottom */
-  left: 0;
+   right: 0;          /* ✅ aligns to right edge of .profile */
+  left: auto; 
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
