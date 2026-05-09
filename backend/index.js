@@ -102,6 +102,14 @@ app.get("/funds", userVerification, async (req, res) => {
 app.post("/signup" , AuthController.Signup);
 app.post("/login" , AuthController.Login);
 
+app.post("/logout", (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "None",
+  });
+  res.json({ message: "Logged out successfully" });
+});
 
     const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
