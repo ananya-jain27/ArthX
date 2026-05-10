@@ -4,7 +4,7 @@ const HoldingsModel = require('../models/HoldingsModel');
 const PositionsModel = require('../models/PostionsModel');
 
 // ✅ Update /newOrder to include userId
-modules.export newOrder = async (req, res) => {
+module.exports.newOrder = async (req, res) => {
   try {
     const { name, qty, price, mode } = req.body;
     const amount = qty * price;
