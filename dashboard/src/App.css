@@ -880,3 +880,15 @@ hr {
 .dropdown-item.logout:hover {
   background: #fdecea;
 }
+
+.funds-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.funds-actions {
+  display: flex;
+  gap: 12px;
+}
