@@ -22,7 +22,7 @@ module.exports.newOrder = async (req, res) => {
     await req.user.save();
 
     // Save order
-    const newOrder = new OrdersModel({ name, qty, price, mode });
+    const newOrder = new OrdersModel({ userId , name, qty, price, mode });
     await newOrder.save();
 
     // ✅ Update Holdings — filter by userId AND name
