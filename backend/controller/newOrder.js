@@ -1,6 +1,10 @@
 
+const OrdersModel = require('../models/OrdersModel');
+const HoldingsModel = require('../models/HoldingsModel');
+const PositionsModel = require('../models/PostionsModel');
+
 // ✅ Update /newOrder to include userId
-app.post("/newOrder", userVerification, async (req, res) => {
+modules.export newOrder = async (req, res) => {
   try {
     const { name, qty, price, mode } = req.body;
     const amount = qty * price;
@@ -99,4 +103,4 @@ app.post("/newOrder", userVerification, async (req, res) => {
     console.error(err);
     res.status(500).json({ message: "Failed to place order" });
   }
-});
+};
