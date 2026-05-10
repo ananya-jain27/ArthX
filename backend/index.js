@@ -13,6 +13,7 @@ const OrdersModel = require('./models/OrdersModel');
 const HoldingsModel = require('./models/HoldingsModel');
 const PositionsModel = require('./models/PostionsModel');
 const AuthController = require("./controller/AuthController.js");
+const newOrder = require("./controller/newOrder.js");
 const { userVerification } = require('./middleware.js');
 
 let dbUrl = process.env.ATLASDB_URL;
@@ -55,34 +56,7 @@ app.get('/user',userVerification, (req,res) => {
   res.send(req.user);
 });
 
-app.post("/newOrder" ,userVerification ,  async(req,res) => {
-     try {
-        const { name, qty, price, mode } = req.body;
-        const amount = qty * price;
-
-        if (mode === "BUY") {
-            // Check if user has enough funds
-            if (req.user.funds < amount) {
-                return res.status(400).json({ message: "Insufficient funds" });
-            }
-            req.user.funds -= amount;   // Deduct on buy
-        } else if (mode === "SELL") {
-            req.user.funds += amount;   // Add back on sell
-        }
-
-        await req.user.save();  // Save updated funds
-
-        const newOrder = new OrdersModel({ name, qty, price, mode });
-        await newOrder.save();
-
-        res.json({
-            message: "Order placed!",
-            remainingFunds: req.user.funds,
-        });
-    } catch (err) {
-        res.status(500).json({ message: "Failed to place order" });
-    }
-});
+app.post("/newOrder" ,userVerification ,  newOrder.newOrder);
 
 // GET - fetch logged in user's funds
 app.get("/funds", userVerification, async (req, res) => {
