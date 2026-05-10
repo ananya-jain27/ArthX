@@ -58,6 +58,7 @@ export const watchlist = [
 // holdings
 export const holdings = [
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "BHARTIARTL",
     qty: 2,
     avg: 538.05,
@@ -66,6 +67,7 @@ export const holdings = [
     day: "+2.99%",
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "HDFCBANK",
     qty: 2,
     avg: 1383.4,
@@ -74,6 +76,7 @@ export const holdings = [
     day: "+0.11%",
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "HINDUNILVR",
     qty: 1,
     avg: 2335.85,
@@ -82,6 +85,7 @@ export const holdings = [
     day: "+0.21%",
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "INFY",
     qty: 1,
     avg: 1350.5,
@@ -91,6 +95,7 @@ export const holdings = [
     isLoss: true,
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "ITC",
     qty: 5,
     avg: 202.0,
@@ -98,24 +103,9 @@ export const holdings = [
     net: "+2.92%",
     day: "+0.80%",
   },
+  
   {
-    name: "KPITTECH",
-    qty: 5,
-    avg: 250.3,
-    price: 266.45,
-    net: "+6.45%",
-    day: "+3.54%",
-  },
-  {
-    name: "M&M",
-    qty: 2,
-    avg: 809.9,
-    price: 779.8,
-    net: "-3.72%",
-    day: "-0.01%",
-    isLoss: true,
-  },
-  {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "RELIANCE",
     qty: 1,
     avg: 2193.7,
@@ -123,33 +113,9 @@ export const holdings = [
     net: "-3.71%",
     day: "+1.44%",
   },
+  
   {
-    name: "SBIN",
-    qty: 4,
-    avg: 324.35,
-    price: 430.2,
-    net: "+32.63%",
-    day: "-0.34%",
-    isLoss: true,
-  },
-  {
-    name: "SGBMAY29",
-    qty: 2,
-    avg: 4727.0,
-    price: 4719.0,
-    net: "-0.17%",
-    day: "+0.15%",
-  },
-  {
-    name: "TATAPOWER",
-    qty: 5,
-    avg: 104.2,
-    price: 124.15,
-    net: "+19.15%",
-    day: "-0.24%",
-    isLoss: true,
-  },
-  {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "TCS",
     qty: 1,
     avg: 3041.7,
@@ -159,6 +125,7 @@ export const holdings = [
     isLoss: true,
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     name: "WIPRO",
     qty: 4,
     avg: 489.3,
@@ -171,6 +138,7 @@ export const holdings = [
 // positions
 export const positions = [
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     product: "CNC",
     name: "EVEREADY",
     qty: 2,
@@ -181,6 +149,7 @@ export const positions = [
     isLoss: true,
   },
   {
+    userId : ObjectId('69ff30ad0c129c58b8c99933'),
     product: "CNC",
     name: "JUBLFOOD",
     qty: 1,
