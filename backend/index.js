@@ -43,12 +43,12 @@ app.get('/', userVerification ,async(req, res) => {
 
 app.get("/allHoldings" ,userVerification,  async(req,res) => {
     // console.log(req.user);
-    const allHoldings = await HoldingsModel.find({});
+    const allHoldings = await HoldingsModel.find({ userId: req.user._id });
     res.send(allHoldings);
 });
 
 app.get("/allPositions" ,userVerification, async(req,res) => {
-    const allPositions = await PositionsModel.find({});
+    const allPositions = await PositionsModel.find({ userId: req.user._id });
     res.send(allPositions);
 });
 
