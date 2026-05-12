@@ -1,4 +1,5 @@
 import React, { useState , useContext} from "react";
+// const axios = require('axios');
 import { watchlist } from "../data/data";
 import GeneralContext from "./GeneralContext";
 import { Tooltip, Grow } from "@mui/material";
@@ -9,6 +10,24 @@ import {
   MoreHoriz,
 } from "@mui/icons-material";
 import { DonutChart } from "./DonutChart";
+
+
+
+// const url ='https://api.upstox.com/v2/historical-candle/NSE_EQ%7CINE848E01016/1minute/2023-11-13/2023-11-12';
+// const headers = {
+//   Accept: 'application/json',
+// };
+// axios.get(url, { headers })
+//   .then((response) => {
+//     // Print response data
+//     console.log(response.data);
+//   })
+//   .catch((error) => {
+//     // Print error message
+//     console.error(
+//       `Error: ${error.response.status} - ${error.response.data}`
+//     );
+//   });
 
 const labels = watchlist.map((subArray) => subArray["name"]);
 
