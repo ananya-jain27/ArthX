@@ -3,12 +3,12 @@ const OrdersModel = require('../models/OrdersModel');
 const HoldingsModel = require('../models/HoldingsModel');
 const PositionsModel = require('../models/PostionsModel');
 
-// ✅ Update /newOrder to include userId
+// Update /newOrder to include userId
 module.exports.newOrder = async (req, res) => {
   try {
     const { name, qty, price, mode } = req.body;
     const amount = qty * price;
-    const userId = req.user._id; // ✅ get logged-in user's id
+    const userId = req.user._id; // get logged-in user's id
 
     // Update funds
     if (mode === "BUY") {
@@ -25,7 +25,7 @@ module.exports.newOrder = async (req, res) => {
     const newOrder = new OrdersModel({ userId , name, qty, price, mode });
     await newOrder.save();
 
-    // ✅ Update Holdings — filter by userId AND name
+    // Update Holdings — filter by userId AND name
     const existingHolding = await HoldingsModel.findOne({ userId, name });
 
     if (mode === "BUY") {
@@ -60,7 +60,7 @@ module.exports.newOrder = async (req, res) => {
       }
     }
 
-    // ✅ Update Positions — filter by userId AND name
+    // Update Positions — filter by userId AND name
     const existingPosition = await PositionsModel.findOne({ userId, name });
 
     if (mode === "BUY") {
@@ -73,7 +73,7 @@ module.exports.newOrder = async (req, res) => {
         await existingPosition.save();
       } else {
         const newPosition = new PositionsModel({
-          userId,   // ✅ save userId
+          userId,   //  save userId
           product: "CNC",
           name,
           qty,
